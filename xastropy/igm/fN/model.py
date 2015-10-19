@@ -469,8 +469,7 @@ def default_model(recalc=False, pckl_fil=None, use_mcmc=False, write=False):
         
         if use_mcmc == True:
             # MCMC Analysis
-            chain_file = (os.environ.get('DROPBOX_DIR')+
-                        'IGM/fN/MCMC/mcmc_spline_k13r13o13n12_8.fits.gz')
+            chain_file = '/Users/afeinsod/Dropbox/IGM/fN/MCMC/mcmc_spline_k13r13o13n12_8.fits.gz'
             outp = mcmc.chain_stats(chain_file)
     
             # Build a model
@@ -479,8 +478,7 @@ def default_model(recalc=False, pckl_fil=None, use_mcmc=False, write=False):
                             pivots=NHI_pivots, param=outp['best_p'])
         else:
             # Input the f(N) at z=2.4
-            fN_file = (os.environ.get('DROPBOX_DIR')+
-                        'IGM/fN/fN_spline_z24.fits.gz')
+            fN_file = '/Users/afeinsod/Dropbox/IGM/fN/fN_spline_z24.fits.gz'
             hdu = fits.open(fN_file)
             fN_data = hdu[1].data
             #xdb.set_trace()
